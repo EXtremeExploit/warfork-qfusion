@@ -26,7 +26,7 @@ static const char *cg_defaultSexedSounds[] =
 	"*fall_0_1", "*fall_0_2", "*fall_1", "*fall_2",
 	"*falldeath",
 	"*gasp", "*drown",
-	"*jump_1", "*jump_2",
+	"*jump_1", "*jump_2", "*jump_3", "*jump_4",
 	"*pain25", "*pain50", "*pain75", "*pain100",
 	"*wj_1", "*wj_2",
 	"*dash_1", "*dash_2",

@@ -1152,20 +1152,17 @@ void CG_Event_WallJump( entity_state_t *state, int parm, int ev )
 }
 
 /*
-* CG_Event_DoubleJump
-*/
+ * CG_Event_DoubleJump
+ */
 void CG_Event_DoubleJump( entity_state_t *state, int parm )
 {
-
-                if( ISVIEWERENTITY( state->number ) ){
-				CG_SexedSound( state->number, CHAN_BODY, va( S_PLAYER_JUMP_1_to_2, ( rand()&1 )+1 ), 
-					cg_volume_efforts->value, state->attenuation );
-                }
-                else
-                {
-				CG_SexedSound( state->number, CHAN_BODY, va( S_PLAYER_JUMP_1_to_2, ( rand()&1 )+1 ), 
-					cg_volume_players->value, state->attenuation );
-                }
+	if( ISVIEWERENTITY( state->number ) ) {
+				CG_SexedSound( state->number, CHAN_BODY, va( S_PLAYER_JUMP_1_to_4, rand()%4 + 1 ), 
+                    cg_volume_efforts->value, state->attenuation );
+	} else {
+				CG_SexedSound( state->number, CHAN_BODY, va( S_PLAYER_JUMP_1_to_4, rand()%4 + 1 ), 
+                    cg_volume_players->value, state->attenuation );
+	}
 }
 
 /*
@@ -1184,12 +1181,12 @@ void CG_Event_Jump( entity_state_t *state, int parm )
 		CG_PModel_AddAnimation( state->number, LEGS_JUMP_NEUTRAL, 0, 0, EVENT_CHANNEL );
 
                 if( ISVIEWERENTITY( state->number ) ){
-				CG_SexedSound( state->number, CHAN_BODY, va( S_PLAYER_JUMP_1_to_2, ( rand()&1 )+1 ), 
+				CG_SexedSound( state->number, CHAN_BODY, va( S_PLAYER_JUMP_1_to_4, rand()%4 + 1 ), 
 					cg_volume_efforts->value, state->attenuation );
                 }
                 else
                 {
-				CG_SexedSound( state->number, CHAN_BODY, va( S_PLAYER_JUMP_1_to_2, ( rand()&1 )+1 ), 
+				CG_SexedSound( state->number, CHAN_BODY, va( S_PLAYER_JUMP_1_to_4, rand()%4 + 1 ), 
 					cg_volume_players->value, state->attenuation );
                 }
 
@@ -1216,12 +1213,12 @@ void CG_Event_Jump( entity_state_t *state, int parm )
 				CG_PModel_AddAnimation( state->number, LEGS_JUMP_LEG2, 0, 0, EVENT_CHANNEL );
                
                 if( ISVIEWERENTITY( state->number ) ){
-				CG_SexedSound( state->number, CHAN_BODY, va( S_PLAYER_JUMP_1_to_2, ( rand()&1 )+1 ), 
+				CG_SexedSound( state->number, CHAN_BODY, va( S_PLAYER_JUMP_1_to_4, rand()%4 + 1 ), 
 					cg_volume_efforts->value, state->attenuation );
                 }
                 else
                 {
-				CG_SexedSound( state->number, CHAN_BODY, va( S_PLAYER_JUMP_1_to_2, ( rand()&1 )+1 ), 
+				CG_SexedSound( state->number, CHAN_BODY, va( S_PLAYER_JUMP_1_to_4, rand()%4 + 1 ), 
 					cg_volume_players->value, state->attenuation );
                 }
 
@@ -1231,12 +1228,12 @@ void CG_Event_Jump( entity_state_t *state, int parm )
 				CG_PModel_AddAnimation( state->number, LEGS_JUMP_LEG1, 0, 0, EVENT_CHANNEL );
 
                 if( ISVIEWERENTITY( state->number ) ){
-				CG_SexedSound( state->number, CHAN_BODY, va( S_PLAYER_JUMP_1_to_2, ( rand()&1 )+1 ), 
+				CG_SexedSound( state->number, CHAN_BODY, va( S_PLAYER_JUMP_1_to_4, rand()%4 + 1 ), 
 					cg_volume_efforts->value, state->attenuation );
                 }
                 else
                 {
-				CG_SexedSound( state->number, CHAN_BODY, va( S_PLAYER_JUMP_1_to_2, ( rand()&1 )+1 ), 
+				CG_SexedSound( state->number, CHAN_BODY, va( S_PLAYER_JUMP_1_to_4, rand()%4 + 1 ), 
 					cg_volume_players->value, state->attenuation );
                 }
 
@@ -1247,12 +1244,12 @@ void CG_Event_Jump( entity_state_t *state, int parm )
 			CG_PModel_AddAnimation( state->number, LEGS_JUMP_NEUTRAL, 0, 0, EVENT_CHANNEL );
 
                 if( ISVIEWERENTITY( state->number ) ){
-				CG_SexedSound( state->number, CHAN_BODY, va( S_PLAYER_JUMP_1_to_2, ( rand()&1 )+1 ), 
+				CG_SexedSound( state->number, CHAN_BODY, va( S_PLAYER_JUMP_1_to_4, rand()%4 + 1 ), 
 					cg_volume_efforts->value, state->attenuation );
                 }
                 else
                 {
-				CG_SexedSound( state->number, CHAN_BODY, va( S_PLAYER_JUMP_1_to_2, ( rand()&1 )+1 ), 
+				CG_SexedSound( state->number, CHAN_BODY, va( S_PLAYER_JUMP_1_to_4, rand()%4 + 1 ), 
 					cg_volume_players->value, state->attenuation );
                 }
 
@@ -1427,12 +1424,12 @@ void CG_EntityEvent( entity_state_t *ent, int ev, int parm, bool predicted )
 	case EV_JUMP_PAD:
 
                 if( ISVIEWERENTITY( ent->number ) ){
-				CG_SexedSound( ent->number, CHAN_BODY, va( S_PLAYER_JUMP_1_to_2, ( rand()&1 )+1 ), 
+				CG_SexedSound( ent->number, CHAN_BODY, va( S_PLAYER_JUMP_1_to_4, rand()%4 + 1 ), 
 					cg_volume_efforts->value, ent->attenuation );
                 }
                 else
                 {
-				CG_SexedSound( ent->number, CHAN_BODY, va( S_PLAYER_JUMP_1_to_2, ( rand()&1 )+1 ), 
+				CG_SexedSound( ent->number, CHAN_BODY, va( S_PLAYER_JUMP_1_to_4, rand()%4 + 1 ), 
 					cg_volume_players->value, ent->attenuation );
                 }
 

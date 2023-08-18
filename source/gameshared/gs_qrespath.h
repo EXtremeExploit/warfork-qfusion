@@ -321,7 +321,7 @@ extern "C" {
 #define S_WORLD_MESSAGE			    "sounds/misc/talk"
 
 // player sounds
-#define S_PLAYER_JUMP_1_to_2	    "*jump_%i"                   // player jump
+#define S_PLAYER_JUMP_1_to_4	    "*jump_%i"                   // player jump
 #define S_PLAYER_WALLJUMP_1_to_2    "*wj_%i"                 // player walljump
 #define S_PLAYER_DASH_1_to_2	    "*dash_%i"                   // player dash
 #define S_PLAYER_RKILL_1_to_50	    "*rkill_%i"                   // player reaction kill
